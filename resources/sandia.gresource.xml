@@ -4,5 +4,7 @@
     <file>style.css</file>
 
     <file preprocess="xml-stripblanks">ui/MainWindow.ui</file>
+    <file>ui/ListItem.ui</file>
+    <file>ui/TaskPage.ui</file>
   </gresource>
 </gresources>
