@@ -1,6 +1,8 @@
 sandia_sources += [
   'Application.vala',
-  'MainWindow.vala'
+  'MainWindow.vala',
+  'ListItem.vala',
+  'TaskPage.vala',
 ]
 
 executable(app_name, sandia_sources,
