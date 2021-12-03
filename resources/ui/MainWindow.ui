@@ -3,6 +3,15 @@
   <requires lib="gtk" version="4.2"/>
   <requires lib="libadwaita" version="1.0"/>
 
+  <menu id="action_menu">
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">_About Sandia</attribute>
+        <attribute name="action">app.about</attribute>
+      </item>
+    </section>
+  </menu>
+
   <template class="SandiaMainWindow" parent="AdwApplicationWindow">
     <property name="title" translatable="yes">Sandia</property>
     <property name="default_width">800</property>
@@ -13,7 +22,6 @@
       <object class="AdwToastOverlay" id="toast_overlay">
         <property name="child">
           <object class="AdwLeaflet" id="leaflet">
-            <property name="can-swipe-back">true</property>
             <property name="width-request">366</property>
 
             <child>
@@ -34,9 +42,9 @@
                     </property>
 
                     <child type="end">
-                      <object class="GtkButton">
+                      <object class="GtkMenuButton">
                         <property name="icon-name">open-menu-symbolic</property>
-                        <signal name="clicked" handler="send_toast_button_clicked_cb" swapped="no"></signal>
+                        <property name="menu-model">action_menu</property>
                       </object>
                     </child>
 
@@ -45,9 +53,21 @@
 
                 <!-- Sidebar / View Switcher -->
                 <child>
-                  <object class="GtkStackSidebar">
-                    <property name="stack">main_stack</property>
-                    <property name="vexpand">true</property>
+
+                  <object class="GtkBox">
+                    <property name="orientation">vertical</property>
+                    <child>
+                      <object class="GtkStackSidebar">
+                        <property name="stack">main_stack</property>
+                        <property name="vexpand">true</property>
+                      </object>
+                    </child>
+
+                    <child>
+                      <object class="GtkListBox" id="sidebar_list">
+                      </object>
+                    </child>
+
                   </object>
                 </child>
 
@@ -91,11 +111,18 @@
                         <property name="title">Business Management</property>
                         <property name="child">
 
-                          <object class="GtkLabel">
-                            <property name="label">Woohoooooooo</property>
-                            <style>
-                              <class name="large-title"/>
-                            </style>
+                          <object class="GtkBox">
+                            <property name="orientation">vertical</property>
+
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="label">Woohoooooooo</property>
+                                <style>
+                                  <class name="large-title"/>
+                                </style>
+                              </object>
+                            </child>
+
                           </object>
 
                         </property>
