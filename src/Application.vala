@@ -20,6 +20,7 @@
 
 namespace Sandia {
     public class Application : Adw.Application {
+        public MainWindow main_window;
 
         struct AccelEntry {
             string action_name;
@@ -27,7 +28,8 @@ namespace Sandia {
         }
 
         static ActionEntry[] ACTION_ENTRIES = {
-            { "quit", quit }
+            { "quit", quit },
+            { "about", show_about_dialog}
         };
 
         static AccelEntry[] ACCEL_ENTRIES = {
@@ -52,11 +54,33 @@ namespace Sandia {
         }
 
         protected override void activate () {
-            var win = get_active_window ();
-            if (win == null) {
-                win = new MainWindow (this);
+            if (main_window == null) {
+                main_window = new MainWindow (this);
             }
-            win.present ();
+            main_window.present ();
+        }
+
+        private void show_about_dialog () {
+            const string COPYRIGHT = "Copyright \xc2\xa9 2021 Diego Iván";
+            const string? AUTHORS[] = {
+                "Diego Iván",
+                null
+            };
+            string program_name = "Sandia";
+
+            Gtk.show_about_dialog (
+                main_window, // transient for
+                "program_name", program_name,
+                "logo-icon-name", Config.APP_ID,
+                "version", Config.VERSION,
+                "copyright", COPYRIGHT,
+                "authors", AUTHORS,
+                "artists", null,
+                "license-type", Gtk.License.GPL_3_0,
+                "wrap-license", true,
+                "translator-credits", _("translator-credits"),
+                null
+            );
         }
 
         static int main (string[] args) {
