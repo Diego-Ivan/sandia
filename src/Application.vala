@@ -58,6 +58,7 @@ namespace Sandia {
                 main_window = new MainWindow (this);
             }
             main_window.present ();
+            style_manager.color_scheme = Adw.ColorScheme.PREFER_DARK;
         }
 
         private void show_about_dialog () {

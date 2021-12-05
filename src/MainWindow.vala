@@ -6,7 +6,7 @@
  */
 
 namespace Sandia {
-    [GtkTemplate (ui = "/io/github/diegoivanme/Sandia/ui/MainWindow.ui")]
+    [GtkTemplate (ui = "/io/github/diegoivanme/Sandia/MainWindow.ui")]
     public class MainWindow : Adw.ApplicationWindow {
         [GtkChild] unowned Adw.ToastOverlay toast_overlay;
         [GtkChild] unowned Gtk.ListBox sidebar_list;

@@ -1,3 +1,5 @@
+subdir ('resources')
+
 sandia_sources += [
   'Application.vala',
   'MainWindow.vala',
@@ -7,9 +9,11 @@ sandia_sources += [
 
 executable(app_name, sandia_sources,
   vala_args: [
+    '--gresources', sandia_resource_files,
+    '--gresourcesdir', meson.project_source_root()/'resources',
     '--target-glib=2.50',
     '--vapidir', vapi_dir,
-    '--enable-experimental'
+    '--enable-experimental',
   ],
   c_args: [
     '-DVERSION="' + meson.project_version() + '"',

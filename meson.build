@@ -38,7 +38,7 @@ if not libadwaita_dep.found()
     'libadwaita',
     default_options: [
         'examples=false',
-       f'package_subdir=@app_name@',
+        'package_subdir=@app_name@',
         'tests=false'
     ]
   )
@@ -60,7 +60,6 @@ sandia_deps = [
 i18n = import('i18n')
 
 subdir('data')
-subdir('resources')
 subdir('src')
 subdir('po')
 
