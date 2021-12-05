@@ -11,7 +11,7 @@ menu action_menu {
 }
 
 template SandiaMainWindow : Adw.ApplicationWindow {
-  .AdwToastOverlay toast_overlay {
+  .AdwToastOverlay {
     child: Adw.Leaflet leaflet {
       width-request: 366;
 
@@ -21,10 +21,12 @@ template SandiaMainWindow : Adw.ApplicationWindow {
 
         Adw.HeaderBar {
           show-end-title-buttons: bind leaflet.folded sync-create;
-          title-widget: Gtk.Label {
+
+          [title-widget]
+          Gtk.Label {
             label: _("Your Lists");
             styles ["title"]
-          };
+          }
 
           [end]
           Gtk.MenuButton {
@@ -37,7 +39,7 @@ template SandiaMainWindow : Adw.ApplicationWindow {
           orientation: vertical;
 
           Gtk.StackSidebar {
-            stack: main_stack;
+            // stack: main_stack;
             vexpand: true;
           }
 
@@ -57,10 +59,11 @@ template SandiaMainWindow : Adw.ApplicationWindow {
       	hexpand: true;
 
       	Adw.HeaderBar {
-      	  title-widget: Gtk.Label {
+      	  [title-widget]
+      	  Gtk.Label {
       	    label: "Sandia";
       	    styles ["title"]
-      	  };
+      	  }
       	}
 
       	Gtk.Stack main_stack {
