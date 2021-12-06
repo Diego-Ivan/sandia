@@ -24,8 +24,13 @@ namespace Sandia {
             );
 
             task = new Task ();
+            task.row = this;
             bind_property ("title",
                 task, "title",
+                BIDIRECTIONAL
+            );
+            bind_property ("completed",
+                task, "completed",
                 BIDIRECTIONAL
             );
         }

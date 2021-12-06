@@ -8,13 +8,11 @@
  namespace Sandia {
     public class Task : GLib.Object  {
         public string title { get; set; }
+        public string description { get; set; }
         public bool completed { get; set; }
 
         public DateTime start_date { get; set; }
         public DateTime due_date { get; set; }
         public TaskRow row { get; set; }
-
-        public Task () {
-        }
     }
  }
