@@ -38,12 +38,12 @@ namespace Sandia {
         construct {
             title_label.bind_property ("label",
                 this, "title",
-                BindingFlags.SYNC_CREATE | BindingFlags.BIDIRECTIONAL
+                SYNC_CREATE | BIDIRECTIONAL
             );
 
             task_check.bind_property ("active",
                 this, "completed",
-                BindingFlags.SYNC_CREATE | BindingFlags.BIDIRECTIONAL
+                SYNC_CREATE | BIDIRECTIONAL
             );
 
             var trash_image = new RowImage ("user-trash-symbolic");

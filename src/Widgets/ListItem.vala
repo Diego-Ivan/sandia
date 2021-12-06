@@ -33,12 +33,12 @@ namespace Sandia {
         construct {
             icon.bind_property ("icon-name",
                 this, "icon-name",
-                BindingFlags.SYNC_CREATE | BindingFlags.BIDIRECTIONAL
+                SYNC_CREATE | BIDIRECTIONAL
             );
 
             title_label.bind_property ("label",
                 this, "title",
-                BindingFlags.SYNC_CREATE | BindingFlags.BIDIRECTIONAL
+                SYNC_CREATE | BIDIRECTIONAL
             );
 
             notify["task-number"].connect ((s, p) => {

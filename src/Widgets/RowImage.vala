@@ -28,7 +28,7 @@ namespace Sandia {
             image = new Gtk.Image ();
             image.bind_property ("icon-name",
                 this, "icon-name",
-                BindingFlags.SYNC_CREATE | BindingFlags.BIDIRECTIONAL
+                SYNC_CREATE | BIDIRECTIONAL
             );
 
             click_controller = new Gtk.GestureClick ();

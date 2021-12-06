@@ -25,7 +25,7 @@ namespace Sandia {
         construct {
             title_label.bind_property ("label",
                 this, "title",
-                BindingFlags.SYNC_CREATE | BindingFlags.BIDIRECTIONAL
+                SYNC_CREATE | BIDIRECTIONAL
             );
         }
 
