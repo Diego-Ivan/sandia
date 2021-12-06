@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.2"/>
+  <requires lib="libadwaita" version="1.0"/>
+
+  <template class="SandiaTaskRow" parent="GtkListBoxRow">
+    <property name="hexpand">true</property>
+    <property name="child">
+      <object class="GtkBox">
+        <property name="orientation">horizontal</property>
+        <property name="spacing">8</property>
+
+        <child>
+          <object class="GtkCheckButton" id="task_check"></object>
+        </child>
+
+        <child>
+          <object class="GtkLabel" id="title_label"></object>
+        </child>
+
+      </object>
+    </property>
+  </template>
+</interface>

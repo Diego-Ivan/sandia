@@ -6,5 +6,6 @@
     <file preprocess="xml-stripblanks">ui/MainWindow.ui</file>
     <file>ui/ListItem.ui</file>
     <file>ui/TaskPage.ui</file>
+    <file>ui/TaskRow.ui</file>
   </gresource>
 </gresources>
