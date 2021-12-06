@@ -23,15 +23,36 @@ taskrow {
   margin-top: 6px;
 }
 
+taskrow rowimage {
+  transition: ease-out 0.2s;
+  opacity: 0;
+}
+
 taskrow:hover {
-  background-color: @headerbar_bg_color;
+  background-color: alpha(@theme_fg_color, 0.1);
+}
+
+taskrow:hover rowimage {
+  opacity: 1;
 }
 
 taskrow box {
   transition: ease-in 0.1s;
 }
 
-
-taskrow.completed box {
+taskrow.completed {
   opacity: 0.5;
+}
+
+rowimage {
+  padding: 6px;
+  border-radius: 6px;
+}
+
+rowimage:hover {
+  background-color: alpha(@theme_fg_color, 0.1);
+}
+
+rowimage.destructive-action image {
+  color: @destructive_color;
 }
