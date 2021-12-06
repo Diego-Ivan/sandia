@@ -11,12 +11,16 @@ namespace Sandia {
         public uint stack_page { get; set; }
 
         public ListItem (string user_title) {
-            title = user_title;
+            Object (
+                title: user_title
+            );
         }
 
         public ListItem.with_icon (string user_title, string user_icon) {
-            title = user_title;
-            icon_name = user_icon;
+            Object (
+                title: user_title,
+                icon_name: user_icon
+            );
         }
 
         construct {
