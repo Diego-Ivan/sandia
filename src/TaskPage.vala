@@ -3,6 +3,7 @@ namespace Sandia {
     public class TaskPage : Adw.Bin {
         [GtkChild] unowned Gtk.Label title_label;
         [GtkChild] unowned Gtk.ListBox task_box;
+        [GtkChild] unowned Gtk.Entry task_entry;
 
         public string title { get; set; }
         public string named { get; set; }
@@ -12,11 +13,6 @@ namespace Sandia {
                 title: user_title,
                 named: user_name
             );
-
-            var row = new TaskRow ("My Task");
-            var my_row = new TaskRow ("fsafs");
-            task_box.prepend (row);
-            task_box.prepend (my_row);
         }
 
         construct {
@@ -24,6 +20,15 @@ namespace Sandia {
                 this, "title",
                 BindingFlags.SYNC_CREATE | BindingFlags.BIDIRECTIONAL
             );
+        }
+
+        [GtkCallback]
+        private void add_button_clicked_cb () {
+            if (task_entry.text != "") {
+                var row = new TaskRow (task_entry.text);
+                task_box.append (row);
+                task_entry.text = "";
+            }
         }
     }
 }

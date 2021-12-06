@@ -57,7 +57,7 @@
                     </style>
 
                     <child>
-                      <object class="GtkEntry">
+                      <object class="GtkEntry" id="task_entry">
                         <property name="hexpand">true</property>
                         <property name="placeholder-text" translatable="yes">Add a new task...</property>
                       </object>
@@ -66,6 +66,7 @@
                     <child>
                       <object class="GtkButton">
                         <property name="icon-name">list-add-symbolic</property>
+                        <signal name="clicked" handler="add_button_clicked_cb" swapped="no"/>
                       </object>
                     </child>
 
