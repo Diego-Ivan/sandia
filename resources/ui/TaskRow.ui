@@ -8,6 +8,7 @@
     <property name="child">
       <object class="GtkBox">
         <property name="orientation">horizontal</property>
+        <property name="hexpand">true</property>
         <property name="spacing">8</property>
 
         <child>
@@ -16,6 +17,15 @@
 
         <child>
           <object class="GtkLabel" id="title_label"></object>
+        </child>
+
+        <child>
+          <object class="GtkBox" id="actions_box">
+            <property name="spacing">8</property>
+            <property name="orientation">horizontal</property>
+            <property name="halign">end</property>
+            <property name="hexpand">true</property>
+          </object>
         </child>
 
       </object>
