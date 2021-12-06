@@ -1,3 +1,10 @@
+/* ListItem.vala
+ *
+ * Copyright 2021 Diego Iván <diegoivan.mae@gmail.com>
+ *
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
+
 namespace Sandia {
     [GtkTemplate (ui = "/io/github/diegoivanme/Sandia/ui/ListItem.ui")]
     public class ListItem : Gtk.ListBoxRow {
