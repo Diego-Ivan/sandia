@@ -27,8 +27,8 @@ namespace Sandia {
                 message ("Hola Mundo!");
             });
 
-            var status = new TaskPage ("My Title", "fs");
-            main_stack.add_titled (status, status.title, status.named);
+            var status = new TaskPage ("Business Management", "business_management");
+            main_stack.add_titled (status, status.named, status.title);
         }
     }
 }

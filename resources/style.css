@@ -3,3 +3,15 @@
   margin: 0px 7px 4px 7px;
   border-radius: 7px;
 }
+
+.task-title {
+  color: @accent_color;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-weight: 700;
+	font-size: 230%;
+}
+
+.task-box {
+  margin-top: 20px;
+}

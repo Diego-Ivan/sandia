@@ -1,15 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
   <requires lib="gtk" version="4.0"/>
-  <template class="SandiaTaskPage" parent="GtkBox">
-    <property name="orientation">vertical</property>
-    <child>
-      <object class="GtkLabel">
-        <property name="vexpand">true</property>
-        <property name="valign">center</property>
-        <property name="width-request">200</property>
-        <property name="label" translatable="true">Hello World</property>
+  <template class="SandiaTaskPage" parent="AdwBin">
+    <property name="child">
+      <object class="AdwClamp">
+        <property name="maximum-size">600</property>
+        <property name="tightening-threshold">200</property>
+        <property name="hexpand">true</property>
+
+        <property name="child">
+          <object class="GtkBox">
+            <property name="vexpand">true</property>
+            <property name="orientation">vertical</property>
+
+            <child>
+              <object class="GtkBox" id="header_box">
+                <property name="orientation">vertical</property>
+                <child>
+                  <object class="GtkLabel" id="title_label">
+                    <style>
+                      <class name="task-title"/>
+                    </style>
+                    <property name="halign">start</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkSeparator">
+                    <property name="orientation">horizontal</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+
+            <child>
+              <object class="GtkBox" id="task_box">
+                <property name="orientation">vertical</property>
+                <property name="vexpand">true</property>
+                <style>
+                  <class name="task-box"/>
+                </style>
+
+                <child>
+                  <object class="GtkBox">
+                    <property name="orientation">horizontal</property>
+                    <style>
+                      <class name="linked"/>
+                    </style>
+
+                    <child>
+                      <object class="GtkEntry">
+                        <property name="hexpand">true</property>
+                        <property name="placeholder-text" translatable="yes">Add a new task...</property>
+                      </object>
+                    </child>
+
+                    <child>
+                      <object class="GtkButton">
+                        <property name="icon-name">list-add-symbolic</property>
+                      </object>
+                    </child>
+
+                  </object>
+                </child>
+              </object>
+            </child>
+
+          </object>
+        </property>
       </object>
-    </child>
+    </property>
   </template>
 </interface>

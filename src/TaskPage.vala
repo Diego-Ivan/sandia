@@ -1,6 +1,7 @@
 namespace Sandia {
     [GtkTemplate (ui = "/io/github/diegoivanme/Sandia/ui/TaskPage.ui")]
-    public class TaskPage : Gtk.Box {
+    public class TaskPage : Adw.Bin {
+        [GtkChild] unowned Gtk.Label title_label;
 
         public string title { get; set; }
         public string named { get; set; }
@@ -13,6 +14,10 @@ namespace Sandia {
         }
 
         construct {
+            title_label.bind_property ("label",
+                this, "title",
+                BindingFlags.SYNC_CREATE | BindingFlags.BIDIRECTIONAL
+            );
         }
     }
 }
