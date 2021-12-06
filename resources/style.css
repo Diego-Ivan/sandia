@@ -13,5 +13,25 @@
 }
 
 .task-box {
-  margin-top: 20px;
+  margin-top: 10px;
+}
+
+taskrow {
+  transition: ease-out 0.3s;
+  border-radius: 7px;
+  padding: 8px 4px;
+  margin-top: 6px;
+}
+
+taskrow:hover {
+  background-color: @headerbar_bg_color;
+}
+
+taskrow box {
+  transition: ease-in 0.1s;
+}
+
+
+taskrow.completed box {
+  opacity: 0.5;
 }
