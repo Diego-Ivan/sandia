@@ -6,11 +6,6 @@
  */
 
 namespace Sandia {
-    public struct Task {
-        string name;
-        string description;
-    }
-
     [GtkTemplate (ui = "/io/github/diegoivanme/Sandia/ui/TaskRow.ui")]
     public class TaskRow : Gtk.ListBoxRow {
         [GtkChild] unowned Gtk.Label title_label;
@@ -20,10 +15,18 @@ namespace Sandia {
         public string title { get; set; }
         public bool completed { get; set; }
 
+        public Task task { get; set; }
+
         public TaskRow (string user_title) {
             Object (
                 title: user_title,
                 css_name: "taskrow"
+            );
+
+            task = new Task ();
+            bind_property ("title",
+                task, "title",
+                BIDIRECTIONAL
             );
         }
 
