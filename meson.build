@@ -53,6 +53,7 @@ endif
 sandia_deps = [
     dependency('gio-2.0', version: '>= 2.50'),
     dependency('gtk4', version: '>= 4.2'),
+    dependency('gee-0.8'),
     libadwaita_dep,
     valac.find_library('config', dirs: vapi_dir),
 ]
