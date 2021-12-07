@@ -27,7 +27,7 @@ Yet another To Do list application. Organize your pending tasks. It's far from u
 - [ ] Trash Bin Class
 - [ ] Project Class
 - [ ] Gantt chart creator (for projects, maybe?)
-- [ ] Project progress [See TrimirJournal for reference](https://github.com/matthiasjg/trimirjournal)
+- [ ] Project progress ([See TrimirJournal for reference](https://github.com/matthiasjg/trimirjournal))
 - [ ] Evolution Data Server backend
 - [ ] Todoist integration
 - [ ] Nextcloud/Google Tasks integration
