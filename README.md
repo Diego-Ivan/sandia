@@ -33,3 +33,4 @@ Yet another To Do list application. Organize your pending tasks. It's far from u
 - [ ] Nextcloud/Google Tasks integration
 - [ ] Export to Markdown/Org
 - [ ] Import tasks to a list from Markdown/Org
+- [ ] Port the project to [Blueprint](https://www.jwestman.net/2021/12/02/introducing-blueprint-a-new-way-to-craft-user-interfaces.html) (Currently not possible, see [this issue](https://gitlab.gnome.org/jwestman/blueprint-compiler/-/issues/18)
